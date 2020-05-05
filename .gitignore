@@ -1,3 +1,8 @@
+pat
+pat.exe
+debug
+/.vscode/
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
