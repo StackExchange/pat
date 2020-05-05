@@ -1,0 +1,161 @@
+{
+	"FixedFileInfo": {
+		"FileVersion": {
+			"Major": 4,
+			"Minor": 0,
+			"Patch": 0,
+			"Build": 0
+		},
+		"ProductVersion": {
+			"Major": 4,
+			"Minor": 0,
+			"Patch": 0,
+			"Build": 0
+		},
+		"FileFlagsMask": "3f",
+		"FileFlags": "",
+		"FileOS": "040004",
+		"FileType": "01",
+		"FileSubType": "00"
+	},
+	"StringFileInfo": {
+		"Comments": "pat.exe version 4.0.0-dev",
+		"CompanyName": "Stack Overflow",
+		"FileDescription": "Stack Overflow Puppet Agent Tool",
+		"FileVersion": "v4.0.0.0",
+		"InternalName": "pat",
+		"LegalCopyright": "(c) 2018 Stack Overflow",
+		"LegalTrademarks": "",
+		"OriginalFilename": "pat.exe",
+		"PrivateBuild": "",
+		"ProductName": "PAT Tool",
+		"ProductVersion": "b44314331900debe01c13650cf4a026da9f0794a",
+		"SpecialBuild": ""
+	},
+	"VarFileInfo": {
+		"Translation": {
+			"LangID": 1033,
+			"CharsetID": 1200
+		}
+	},
+	"Timestamp": false,
+	"Buffer": {},
+	"Structure": {
+		"WLength": 1092,
+		"WValueLength": 52,
+		"WType": 0,
+		"SzKey": "VgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A",
+		"Padding1": "AAAAAA==",
+		"Value": {
+			"DwSignature": 4277077181,
+			"DwStrucVersion": 65536,
+			"DwFileVersionMS": 131073,
+			"DwFileVersionLS": 0,
+			"DwProductVersionMS": 131073,
+			"DwProductVersionLS": 0,
+			"DwFileFlagsMask": 63,
+			"DwFileFlags": 0,
+			"DwFileOS": 262148,
+			"DwFileType": 1,
+			"DwFileSubtype": 0,
+			"DwFileDateMS": 0,
+			"DwFileDateLS": 0
+		},
+		"Padding2": "",
+		"Children": {
+			"WLength": 932,
+			"WValueLength": 0,
+			"WType": 1,
+			"SzKey": "UwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAA==",
+			"Padding": "AAA=",
+			"Children": {
+				"WLength": 896,
+				"WValueLength": 0,
+				"WType": 1,
+				"SzKey": "MAA0ADAAOQAwADQAQgAwAA==",
+				"Padding": "AAA=",
+				"Children": [{
+					"WLength": 240,
+					"WValueLength": 107,
+					"WType": 1,
+					"SzKey": "QwBvAG0AbQBlAG4AdABzAA==",
+					"Padding": "AAA=",
+					"Value": "cABhAHQAYwBoAGUAcgAtAGMAbABpAGUAbgB0AC4AZQB4AGUAIAB2AGUAcgBzAGkAbwBuACAAMgAuADEALgAwAC0AZABlAHYAIAAoAGIANAA0ADMAMQA0ADMAMwAxADkAMAAwAGQAZQBiAGUAMAAxAGMAMQAzADYANQAwAGMAZgA0AGEAMAAyADYAZABhADkAZgAwADcAOQA0AGEAKQAgAGIAdQBpAGwAdAAgADIAMAAxADcALQAxADAALQAxADAAVAAxADQAOgAxADYAOgAyADgAWgAAAAAA"
+				}, {
+					"WLength": 72,
+					"WValueLength": 20,
+					"WType": 1,
+					"SzKey": "QwBvAG0AcABhAG4AeQBOAGEAbQBlAA==",
+					"Padding": "AAAAAA==",
+					"Value": "UwB0AGEAYwBrACAARQB4AGMAaABhAG4AZwBlACwAIABJAG4AYwAAAA=="
+				}, {
+					"WLength": 100,
+					"WValueLength": 30,
+					"WType": 1,
+					"SzKey": "RgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A",
+					"Padding": "AAAAAA==",
+					"Value": "UwB0AGEAYwBrACAARQB4AGMAaABhAG4AZwBlACAAUABhAHQAYwBoAGUAcgAgAEMAbABpAGUAbgB0AAAA"
+				}, {
+					"WLength": 52,
+					"WValueLength": 9,
+					"WType": 1,
+					"SzKey": "RgBpAGwAZQBWAGUAcgBzAGkAbwBuAA==",
+					"Padding": "AAAAAA==",
+					"Value": "dgAyAC4AMAAuADAALgAwAAAAAAA="
+				}, {
+					"WLength": 48,
+					"WValueLength": 8,
+					"WType": 1,
+					"SzKey": "SQBuAHQAZQByAG4AYQBsAE4AYQBtAGUA",
+					"Padding": "AAA=",
+					"Value": "UABhAHQAYwBoAGUAcgAAAA=="
+				}, {
+					"WLength": 96,
+					"WValueLength": 29,
+					"WType": 1,
+					"SzKey": "TABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AA==",
+					"Padding": "AAA=",
+					"Value": "KABjACkAIAAyADAAMQA2ACAAUwB0AGEAYwBrACAARQB4AGMAaABhAG4AZwBlACwAIABJAG4AYwAAAAAA"
+				}, {
+					"WLength": 80,
+					"WValueLength": 19,
+					"WType": 1,
+					"SzKey": "TwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQA=",
+					"Padding": "AAA=",
+					"Value": "cABhAHQAYwBoAGUAcgAtAGMAbABpAGUAbgB0AC4AZQB4AGUAAAAAAA=="
+				}, {
+					"WLength": 64,
+					"WValueLength": 15,
+					"WType": 1,
+					"SzKey": "UAByAG8AZAB1AGMAdABOAGEAbQBlAA==",
+					"Padding": "AAAAAA==",
+					"Value": "UABhAHQAYwBoAGUAcgAgAEMAbABpAGUAbgB0AAAAAAA="
+				}, {
+					"WLength": 120,
+					"WValueLength": 41,
+					"WType": 1,
+					"SzKey": "UAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAA==",
+					"Padding": "AAA=",
+					"Value": "YgA0ADQAMwAxADQAMwAzADEAOQAwADAAZABlAGIAZQAwADEAYwAxADMANgA1ADAAYwBmADQAYQAwADIANgBkAGEAOQBmADAANwA5ADQAYQAAAAAA"
+				}]
+			}
+		},
+		"Children2": {
+			"WLength": 68,
+			"WValueLength": 0,
+			"WType": 1,
+			"SzKey": "VgBhAHIARgBpAGwAZQBJAG4AZgBvAA==",
+			"Padding": "AAAAAA==",
+			"Value": {
+				"WLength": 36,
+				"WValueLength": 4,
+				"WType": 0,
+				"SzKey": "VAByAGEAbgBzAGwAYQB0AGkAbwBuAA==",
+				"Padding": "AAAAAA==",
+				"Value": 78644233
+			}
+		}
+	},
+	"IconPath": "",
+	"ManifestPath": "pat.exe.manifest"
+}
