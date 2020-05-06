@@ -13,8 +13,6 @@ allowing you to do things such as:
 This is the Go re-implementation of the bash script by the same name, used internally at Stack Overflow.
 This version works on both Linux and Windows.
 
-On Windows, this tool is the only way to execute `pat`. It is installed as `C:\Program Files\stack\pat.exe`, and is included in the Windows path variable.
-
 The pat icon is designed by [entertainment from Flaticon](https://www.shareicon.net/show-curtains-entertainment-stage-puppet-puppets-puppet-show-822813)
 
 ----
