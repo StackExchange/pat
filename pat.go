@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/urfave/cli"
-	silence "github.ds.stackexchange.com/sre/pat/addsilence"
+	silence "github.com/StackExchange/pat/addsilence"
 )
 
 var (

@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/urfave/cli"
-	"github.ds.stackexchange.com/sre/pat/version"
+	"github.com/StackExchange/pat/version"
 )
 
 // preprocessArgs inserts a "--disable-message" flag in front of a bare message.

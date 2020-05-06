@@ -1,6 +1,6 @@
 // Package version holds some version data common to patcher client and server.
 // Most of these values will be inserted at build time with `-ldFlags` directives for official builds.
-package version // import "github.ds.stackexchange.com/sre/pat/version"
+package version // import "github.com/StackExchange/pat/version"
 
 import (
 	"fmt"
