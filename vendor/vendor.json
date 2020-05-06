@@ -4,39 +4,39 @@
 	"package": [
 		{
 			"checksumSHA1": "Y71DWZxVHxm5RKQDF2807roHrv4=",
-			"origin": "github.ds.stackexchange.com/sre/pat/vendor/github.com/akavel/rsrc/binutil",
+			"origin": "github.com/StackExchange/pat/vendor/github.com/akavel/rsrc/binutil",
 			"path": "github.com/akavel/rsrc/binutil",
 			"revision": "f6a15ece2cfd2560077c556499f19340ddc768e9",
 			"revisionTime": "2017-08-31T12:24:31Z"
 		},
 		{
 			"checksumSHA1": "dY6sByHSXr76sRhg42HvGqYhU5I=",
-			"origin": "github.ds.stackexchange.com/sre/pat/vendor/github.com/akavel/rsrc/coff",
+			"origin": "github.com/StackExchange/pat/vendor/github.com/akavel/rsrc/coff",
 			"path": "github.com/akavel/rsrc/coff",
 			"revision": "f6a15ece2cfd2560077c556499f19340ddc768e9",
 			"revisionTime": "2017-08-31T12:24:31Z"
 		},
 		{
 			"checksumSHA1": "8FHKm/Sc+zlYExn/UkdoG0Mk2cw=",
-			"origin": "github.ds.stackexchange.com/sre/pat/vendor/github.com/akavel/rsrc/ico",
+			"origin": "github.com/StackExchange/pat/vendor/github.com/akavel/rsrc/ico",
 			"path": "github.com/akavel/rsrc/ico",
 			"revision": "f6a15ece2cfd2560077c556499f19340ddc768e9",
 			"revisionTime": "2017-08-31T12:24:31Z"
 		},
 		{
 			"checksumSHA1": "WFHnkW8kn/7pxunMaS8QhU0b3BA=",
-			"origin": "github.ds.stackexchange.com/sre/pat/vendor/github.com/josephspurrier/goversioninfo",
+			"origin": "github.com/StackExchange/pat/vendor/github.com/josephspurrier/goversioninfo",
 			"path": "github.com/josephspurrier/goversioninfo",
 			"revision": "0d8781fedde91283df3f137ce4e8a5545fbc4a7f",
 			"revisionTime": "2017-12-05T05:30:42Z"
 		},
 		{
 			"checksumSHA1": "H1Ne82yYzWRQ2DKBsmRd0Hwcl04=",
-			"origin": "github.ds.stackexchange.com/sre/pat/vendor/github.com/urfave/cli",
+			"origin": "github.com/StackExchange/pat/vendor/github.com/urfave/cli",
 			"path": "github.com/urfave/cli",
 			"revision": "75104e932ac2ddb944a6ea19d9f9f26316ff1145",
 			"revisionTime": "2018-01-06T19:10:48Z"
 		}
 	],
-	"rootPath": "github.ds.stackexchange.com/sre/pat"
+	"rootPath": "github.com/StackExchange/pat"
 }
