@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/urfave/cli"
 	silence "github.com/StackExchange/pat/addsilence"
+	"github.com/urfave/cli"
 )
 
 var (
@@ -25,11 +25,6 @@ var (
 )
 
 func doPat(pat *cli.Context) error {
-	//If we are not root/administrator, we can't escalate ourselves at the moment, so nope outta here
-	if !isRoot() {
-		return fmt.Errorf("You must run pat as %s", osRootName)
-	}
-
 	//Throw these as globals as they're used all over the place. Saves us from passing pat through everywhere.
 	additionalArguments = pat.Args()
 	enableSilence = !pat.Bool("nosilence")

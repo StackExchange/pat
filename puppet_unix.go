@@ -20,7 +20,8 @@ func isRoot() bool {
 
 // This is the normal way of execing, see the Windows one for the messed up way
 func osMakeExec(osPuppetBinPath string, puppetArgs ...string) (*exec.Cmd, error) {
-	cmd := exec.Command(osPuppetBinPath, puppetArgs...)
+	sudoArgs := append([]string{osPuppetBinPath}, puppetArgs...)
+	cmd := exec.Command("sudo", sudoArgs...)
 	return cmd, nil
 }
 
