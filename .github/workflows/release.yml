@@ -1,0 +1,92 @@
+name: release
+
+on:
+  release:
+    types: [published]
+
+env:
+  GOPRIVATE: "github.com/StackEng"
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Get release
+      id: get_release
+      uses: bruceadams/get-release@v1.2.2
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+
+    # GITHUB_REF is a constant with the git reference i.e. tag name
+    - name: Get release from tag
+      run: echo ::set-output name=RELEASE_VERSION::$(echo ${GITHUB_REF:11})
+      id: versioner
+
+    - name: Set up Go 1.15
+      uses: actions/setup-go@v2
+      with:
+        go-version: ^1.15
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
+
+    - name: Build pat
+      run: go run build/build.go -os linux -version ${{ steps.versioner.outputs.RELEASE_VERSION }} -release
+
+    - name: Build pat.exe
+      run: go run build/build.go -os windows -version ${{ steps.versioner.outputs.RELEASE_VERSION }} -release
+
+    - name: Make target directories
+      run: mkdir -p usr/bin
+
+    - name: Copy binaries to target
+      run: |
+        cp pat usr/bin
+
+    - name: Bundle RPM
+      uses: bpicode/github-action-fpm@master
+      with:
+        fpm_args: 'usr/'
+        fpm_opts: '-n pat -t rpm -s dir -v ${{ steps.versioner.outputs.RELEASE_VERSION }} --epoch 2'
+
+    - name: Bundle DEB
+      uses: bpicode/github-action-fpm@master
+      with:
+        fpm_args: 'usr/'
+        fpm_opts: '-n pat -t deb -s dir -v ${{ steps.versioner.outputs.RELEASE_VERSION }}'
+
+    - name: Bundle NuGet
+      run: nuget pack -properties version=${{ steps.versioner.outputs.RELEASE_VERSION }};commit=$GITHUB_SHA
+
+    - name: Upload RPM
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.get_release.outputs.upload_url }} 
+        asset_path: patcher-client-${{ steps.versioner.outputs.RELEASE_VERSION }}-1.x86_64.rpm
+        asset_name: patcher-client-${{ steps.versioner.outputs.RELEASE_VERSION }}-1.x86_64.rpm
+        asset_content_type: application/x-rpm
+
+    - name: Upload DEB
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.get_release.outputs.upload_url }} 
+        asset_path: patcher-client_${{ steps.versioner.outputs.RELEASE_VERSION }}_amd64.deb
+        asset_name: patcher-client_${{ steps.versioner.outputs.RELEASE_VERSION }}_amd64.deb
+        asset_content_type: application/vnd.debian.binary-package
+
+    - name: Upload NuGet
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.get_release.outputs.upload_url }} 
+        asset_path: patcher-client.${{ steps.versioner.outputs.RELEASE_VERSION}}.nupkg
+        asset_name: patcher-client.${{ steps.versioner.outputs.RELEASE_VERSION}}.nupkg
+        asset_content_type: application/octet-stream
+
