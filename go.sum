@@ -1,0 +1,6 @@
+github.com/akavel/rsrc v0.2.1-0.20170831122431-f6a15ece2cfd h1:Zbf16lRpQhIwWgElxU0NaHrtEEgGUup0YKE0nVMhji0=
+github.com/akavel/rsrc v0.2.1-0.20170831122431-f6a15ece2cfd/go.mod h1:2+aQMrY0hBFBaIr2xxnZ/ctfwnYmMRMbTczYLAC34v4=
+github.com/josephspurrier/goversioninfo v0.0.0-20171205053042-0d8781fedde9 h1:UfeqCbJMVa0i7HB/FXC4ZH/JYiQ39xdpxCRE+yDdndQ=
+github.com/josephspurrier/goversioninfo v0.0.0-20171205053042-0d8781fedde9/go.mod h1:eJTEwMjXb7kZ633hO3Ln9mBUCOjX2+FlTljvpl9SYdE=
+github.com/urfave/cli v1.20.1-0.20180106191048-75104e932ac2 h1:jbDY/Ito1YgbqbjqN+gsskuc8oWeYJV8ig09ZgP6LMk=
+github.com/urfave/cli v1.20.1-0.20180106191048-75104e932ac2/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijbERA=
