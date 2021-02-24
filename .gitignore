@@ -10,6 +10,7 @@ debug
 *.so
 *.dylib
 *.syso
+*.nuget
 
 # Test binary, built with `go test -c`
 *.test
