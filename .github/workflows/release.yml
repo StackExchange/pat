@@ -66,8 +66,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.get_release.outputs.upload_url }} 
-        asset_path: patcher-client-${{ steps.versioner.outputs.RELEASE_VERSION }}-1.x86_64.rpm
-        asset_name: patcher-client-${{ steps.versioner.outputs.RELEASE_VERSION }}-1.x86_64.rpm
+        asset_path: pat-${{ steps.versioner.outputs.RELEASE_VERSION }}-1.x86_64.rpm
+        asset_name: pat-${{ steps.versioner.outputs.RELEASE_VERSION }}-1.x86_64.rpm
         asset_content_type: application/x-rpm
 
     - name: Upload DEB
@@ -76,8 +76,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.get_release.outputs.upload_url }} 
-        asset_path: patcher-client_${{ steps.versioner.outputs.RELEASE_VERSION }}_amd64.deb
-        asset_name: patcher-client_${{ steps.versioner.outputs.RELEASE_VERSION }}_amd64.deb
+        asset_path: pat_${{ steps.versioner.outputs.RELEASE_VERSION }}_amd64.deb
+        asset_name: pat_${{ steps.versioner.outputs.RELEASE_VERSION }}_amd64.deb
         asset_content_type: application/vnd.debian.binary-package
 
     - name: Upload NuGet
@@ -86,7 +86,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.get_release.outputs.upload_url }} 
-        asset_path: patcher-client.${{ steps.versioner.outputs.RELEASE_VERSION}}.nupkg
-        asset_name: patcher-client.${{ steps.versioner.outputs.RELEASE_VERSION}}.nupkg
+        asset_path: pat.${{ steps.versioner.outputs.RELEASE_VERSION}}.nupkg
+        asset_name: pat.${{ steps.versioner.outputs.RELEASE_VERSION}}.nupkg
         asset_content_type: application/octet-stream
 
