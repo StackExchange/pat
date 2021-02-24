@@ -1,0 +1,27 @@
+name: PR Test
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Go 1.15
+      uses: actions/setup-go@v2
+      with:
+        go-version: ^1.15
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
+
+    - name: Build pat windows
+      run: go run build/build.go -os windows
+
+    - name: Build pat linux
+      run: go run build/build.go -os linux
+
