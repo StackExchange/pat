@@ -1,13 +1,13 @@
 package main
 
-// A wrapper for "puppet agent -t" that enforces rules about setting silences, disable messages, and so on.
+// A wrapper for "puppet agent -t" that enforces rules about disable messages and so on.
 
 import (
 	"fmt"
 	"os"
 
-	"github.com/urfave/cli"
 	"github.com/StackExchange/pat/version"
+	"github.com/urfave/cli"
 )
 
 // preprocessArgs inserts a "--disable-message" flag in front of a bare message.
@@ -45,7 +45,7 @@ func preprocessArgs(items []string) []string {
 func main() {
 	pat := cli.NewApp()
 	pat.Name = "pat"
-	pat.Usage = "A wrapper for \"puppet agent -t\" (hence the name: P... A... T) that enforces rules about setting silences, disable messages, and so on"
+	pat.Usage = "A wrapper for \"puppet agent -t\" (hence the name: P... A... T) that enforces rules about disable messages and so on"
 	pat.Version = version.GetVersionInfo()
 	pat.UsageText = fmt.Sprintf("%s [flags] [additional puppet commands]", os.Args[0])
 	pat.Authors = []cli.Author{
@@ -79,10 +79,6 @@ func main() {
 			Usage: "Run puppet. If puppet was disabled, re-disable when done",
 		},
 		cli.BoolFlag{
-			Name:  "nosilence, S",
-			Usage: "Do not set a silence when disabling puppet",
-		},
-		cli.BoolFlag{
 			Name:  "status",
 			Usage: "Report disable status",
 		},
@@ -114,11 +110,6 @@ func main() {
 			Name:  "facts",
 			Usage: "Run puppet facts instead of puppet agent",
 		},
-		cli.StringFlag{
-			Name:  "s",
-			Value: "1h",
-			Usage: "Set the silence duration to [value]",
-		},
 	}
 	cli.AppHelpTemplate = fmt.Sprintf(`%s
 		
@@ -138,9 +129,6 @@ SAMPLE USAGE:
 		if left blank.
 		Silences puppet.left.disabled for 1h or the value set by -s.
 
-	pat --nosilence --disable
-		Runs 'puppet --disable' but does not silence bosun.
-
 	pat --enable
 		Runs 'puppet --enable'
 
@@ -156,7 +144,6 @@ SAMPLE USAGE:
 NOTES:
 	* %s
 	* If you want to add regular "puppet agent" flags, add them after '--'.
-	* No silence it set if --noop set.
 `, cli.AppHelpTemplate, osRootMessage)
 
 	pat.Action = doPat

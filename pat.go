@@ -10,12 +10,10 @@ import (
 	"strings"
 	"time"
 
-	silence "github.com/StackExchange/pat/addsilence"
 	"github.com/urfave/cli"
 )
 
 var (
-	enableSilence       = true
 	additionalArguments = []string{}
 	isDebug             = false
 	isTimestamp         = false
@@ -27,7 +25,6 @@ var (
 func doPat(pat *cli.Context) error {
 	//Throw these as globals as they're used all over the place. Saves us from passing pat through everywhere.
 	additionalArguments = pat.Args()
-	enableSilence = !pat.Bool("nosilence")
 
 	//We need some additional arguments for dealing with things like the verbose and debug flags
 	additionalArguments = pat.Args()
@@ -71,7 +68,6 @@ func doPat(pat *cli.Context) error {
 		tsLn("DEBUG: disable:", pat.String("disable"))
 		tsLn("DEBUG: enable:", pat.Bool("enable"))
 		tsLn("DEBUG: once:", pat.Bool("once"))
-		tsLn("DEBUG: nosilence:", pat.Bool("nosilence"))
 		tsLn("DEBUG: status:", pat.Bool("status"))
 		tsLn("DEBUG: noop:", pat.Bool("noop"))
 		tsLn("DEBUG: debug:", pat.Bool("debug"))
@@ -90,7 +86,6 @@ func doPat(pat *cli.Context) error {
 		tsLn("DEBUG: -- PROGRAM --")
 		tsLn("DEBUG: puppetDisabled:", puppetDisabled)
 		tsLn("DEBUG: additionalArgs:", additionalArguments)
-		tsLn("DEBUG: enableSilence:", enableSilence)
 	}
 
 	var err error
@@ -132,7 +127,7 @@ func doPat(pat *cli.Context) error {
 
 		//If puppet was disabled; disable it again
 		if puppetWasDisabled {
-			err = disablePuppet(disabledMessage, pat.String("s"))
+			err = disablePuppet(disabledMessage)
 			if err != nil {
 				return err
 			}
@@ -144,7 +139,7 @@ func doPat(pat *cli.Context) error {
 
 	// CMD: --disable [message]
 	if pat.IsSet("disable") {
-		err = disablePuppet(pat.String("disable-message"), pat.String("s"))
+		err = disablePuppet(pat.String("disable-message"))
 		return err
 	}
 
@@ -169,7 +164,7 @@ func enablePuppet() error {
 }
 
 // Disable puppet. If puppet is already disabled, will return an error
-func disablePuppet(message, silenceduration string) error {
+func disablePuppet(message string) error {
 	if puppetDisabled {
 		return fmt.Errorf("Puppet is already disabled")
 	}
@@ -198,10 +193,6 @@ func disablePuppet(message, silenceduration string) error {
 	}
 
 	err := execPuppet("--disable", message)
-	if err != nil {
-		return err
-	}
-	err = silenceBosun(silenceduration, message)
 	if err != nil {
 		return err
 	}
@@ -273,31 +264,6 @@ func execPuppet(args ...string) error {
 	}
 	err = cmd.Wait()
 	return err
-}
-
-func silenceBosun(duration, message string) error {
-	// If silencing is disabled, or we're doing a noop
-	if !enableSilence || isNoop {
-		if isDebug {
-			tsLn("DEBUG: Skipping silence, as silence is disabled or we're doing a noop")
-		}
-		return nil
-	}
-
-	//Call silence here
-	hostName, err := os.Hostname()
-	if err != nil {
-		return err
-	}
-	hosts := []string{hostName}
-	silence, err := silence.EasySilence("puppet.left.disabled", duration, message, hosts)
-	if silence != "" {
-		tsLn(silence)
-	}
-	if err != nil {
-		return err
-	}
-	return nil
 }
 
 //Create a form message to use when disabling puppet if no message is specified
