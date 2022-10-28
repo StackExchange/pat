@@ -35,7 +35,7 @@ func doPat(pat *cli.Context) error {
 	if pat.Bool("noop") {
 		tsLn("NOOP mode enabled")
 		isNoop = true
-		flagArguments = append(flagArguments, "--noop", "--agent_disabled_lockfile", "/non_existant")
+		flagArguments = append(flagArguments, "--noop")
 	}
 	if pat.Bool("debug") {
 		isDebug = true
